@@ -7,7 +7,7 @@ public class Test0420 {
         if(root == null){
             return;
         }
-        System.out.print(root.val+" ");
+        System.out.print(root.val+"  ");
         preOrder(root.left);
         preOrder(root.right);
     }
@@ -17,7 +17,7 @@ public class Test0420 {
             return;
         }
         inOrder(root.left);
-        System.out.print(root.val+" ");
+        System.out.print(root.val+"  ");
         inOrder(root.right);
     }
     //后序遍历
@@ -27,7 +27,7 @@ public class Test0420 {
         }
         postOrder(root.left);
         postOrder(root.right);
-        System.out.print(root.val+" ");
+        System.out.print(root.val+"  ");
     }
     //构建一棵二叉树
     public static TreeNode build() {
