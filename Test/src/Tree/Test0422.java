@@ -26,13 +26,52 @@ public class Test0422 {
        }
     }
     //中序非递归遍历
-    private static void inOrder(TreeNode root){
-
+    private static void inOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Stack<TreeNode> tree = new Stack<>();
+        TreeNode cur = root;
+        while (true) {
+            while (cur != null) {
+                tree.push(cur);
+                cur = cur.left;
+            }
+            if (tree.isEmpty()) {
+                break;
+            }
+            TreeNode top = tree.pop();
+            System.out.print(top.val + "  ");
+            cur = top.right;
+        }
     }
     //后序非递归遍历
     private static void postOrder(TreeNode root){
-
+        if(root == null){
+            return;
+        }
+        Stack<TreeNode> tree = new Stack<>();
+        TreeNode cur = root;
+        TreeNode prev = null;
+        while(true){
+            while(cur != null){
+                tree.push(cur);
+                cur = cur.left;
+            }
+            if(tree.isEmpty()){
+                break;
+            }
+            TreeNode top = tree.peek();
+            if(top.right == null || prev == top.right){
+                System.out.print(top.val+"  ");
+                tree.pop();
+                prev = top;
+            }else{
+                cur = top.right;
+            }
+        }
     }
+
     //层序遍历
     private static void levelOrder(TreeNode root){
         if(root == null){
