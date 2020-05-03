@@ -76,16 +76,16 @@ public class java0503 {
         if(root == null){
             return;
         }
-        Queue<TreeNode> tree = new LinkedList<>();
-        tree.offer(root);
-        while(!tree.isEmpty()){
-            TreeNode top = tree.poll();
-            System.out.print(top.val+"  ");
-            if(top.left != null){
-                tree.offer(top.left);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            TreeNode cur = queue.poll();
+            System.out.print(cur.val+"  ");
+            if(cur.left != null){
+                queue.offer(cur.left);
             }
-            if(top.right != null){
-                tree.offer(top.right);
+            if(cur.right != null){
+                queue.offer(cur.right);
             }
         }
     }
