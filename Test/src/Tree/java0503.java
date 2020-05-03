@@ -89,6 +89,34 @@ public class java0503 {
             }
         }
     }
+    //递归遍历
+    //先序递归
+    public static void preOrder2(TreeNode root){
+        if(root == null){
+            return;
+        }
+        System.out.print(root.val+"  ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+    //中序递归
+    public static void inOrder2(TreeNode root){
+        if(root == null){
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.val+"  ");
+        inOrder(root.right);
+    }
+    //后序遍历
+    public static void postOrder2(TreeNode root){
+        if(root == null){
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.val+"  ");
+    }
     //构建一棵二叉树
     public static TreeNode build() {
         TreeNode a = new TreeNode(1);
@@ -120,5 +148,15 @@ public class java0503 {
         System.out.println();
         System.out.print("层序遍历二叉树:");
         levelOrder(root);
+        System.out.println();
+        System.out.println("递归：");
+        System.out.print("先序遍历二叉树:");
+        preOrder(root);
+        System.out.println();
+        System.out.print("中序遍历二叉树:");
+        inOrder(root);
+        System.out.println();
+        System.out.print("后序遍历二叉树:");
+        postOrder(root);
     }
 }
