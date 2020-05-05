@@ -29,4 +29,28 @@ public class Test0505 {
         }
         return left == null? pRootOfTree:left;
     }
+
+    private StringBuilder s = new StringBuilder();
+    public String tree2str(TreeNode t) {
+        if (t == null) {
+            return "";
+        }
+        helper(t);
+        s.deleteCharAt(0);
+        s.deleteCharAt(s.length() - 1);
+        return s.toString();
+    }
+    public void helper(TreeNode t) {
+        if(t == null){
+            return;
+        }
+        s.append("(");
+        s.append(t.val);
+        helper(t.left);
+        if(t.left == null && t.right != null){
+            s.append("()");
+        }
+        helper(t.right);
+        s.append(")");
+    }
 }
