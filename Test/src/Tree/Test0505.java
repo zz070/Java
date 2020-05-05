@@ -30,14 +30,18 @@ public class Test0505 {
         return left == null? pRootOfTree:left;
     }
 
+    //二叉树创建字符串
     private StringBuilder s = new StringBuilder();
-    public String tree2str(TreeNode t) {
+    public String treeTwoStr(TreeNode t) {
+        //如果t 为空，返回空字符串
         if (t == null) {
             return "";
         }
         helper(t);
+        //删除多出来的（）
         s.deleteCharAt(0);
         s.deleteCharAt(s.length() - 1);
+        //返回最终字符串
         return s.toString();
     }
     public void helper(TreeNode t) {
@@ -47,6 +51,7 @@ public class Test0505 {
         s.append("(");
         s.append(t.val);
         helper(t.left);
+        //如果左子树为空，右子树不为空，要输出一个完整的（）
         if(t.left == null && t.right != null){
             s.append("()");
         }
