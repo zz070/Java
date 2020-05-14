@@ -24,12 +24,12 @@ public class Quick {
         //取最左侧元素为基准值
         int base = array[left];
         while(start < end){
-            while(start<end  && array[start]<=base){
-                start++;
-            } // 循环结束时，start指向大于base的值或者与end重合
             while(start < end && array[end] >= base){
                 end--;
             }// 循环结束时，end指向小于base的值或者与start重合
+            while(start<end  && array[start]<=base){
+                start++;
+            } // 循环结束时，start指向大于base的值或者与end重合
             swap(array,start,end);
         }
         swap(array,left,start);
