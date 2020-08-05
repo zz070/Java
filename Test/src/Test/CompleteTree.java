@@ -6,8 +6,8 @@ import java.util.Queue;
 
 class TreeNode {
     int val;
-    Tree.TreeNode left;
-    Tree.TreeNode right;
+    TreeNode left;
+    TreeNode right;
 
     public TreeNode(int val){
         this.val = val;
